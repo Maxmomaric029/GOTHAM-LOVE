@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MAXIMISTA MOD MENU</title>
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="mod-menu" class="menu-container">
+        <div class="menu-header" id="menu-header">
+            <span class="header-title"><i class="fas fa-crosshairs"></i>GOTHAM LOVE</span>
+            <div class="header-controls">
+                <i class="fas fa-minus minimize-btn"></i>
+                <i class="fas fa-times close-btn"></i>
+            </div>
+        </div>
+
+        <div class="menu-body">
+            <!-- Aimbot Section -->
+            <div class="section">
+                <div class="section-title"><i class="fas fa-bullseye"></i> AIMBOT</div>
+                <div class="option">
+                    <span>Aimbot Neck</span>
+                    <label class="switch">
+                        <input type="checkbox" id="aimbot-neck">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="option">
+                    <span>Aimbot</span>
+                    <label class="switch">
+                        <input type="checkbox" id="aimbot">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="option">
+                    <span>Aimlock</span>
+                    <label class="switch">
+                        <input type="checkbox" id="aimlock">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="option">
+                    <span>Silent Aim</span>
+                    <label class="switch">
+                        <input type="checkbox" id="silent-aim">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- FOV Section -->
+            <div class="section">
+                <div class="section-title"><i class="fas fa-expand"></i> FOV PERSONALIZABLE</div>
+                <div class="range-container">
+                    <input type="range" min="0" max="360" value="90" class="range-input" id="fov-range">
+                    <div class="range-value"><span id="fov-val">90</span>°</div>
+                </div>
+            </div>
+
+            <!-- Speedy Section -->
+            <div class="section">
+                <div class="section-title"><i class="fas fa-bolt"></i> SPEEDY</div>
+                <div class="option">
+                    <span>Activar Speedy</span>
+                    <label class="switch">
+                        <input type="checkbox" id="speedy-active">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="speedy-controls">
+                    <button class="speed-btn" data-speed="1">x1</button>
+                    <button class="speed-btn" data-speed="fix">speedy fix</button>
+                    <button class="speed-btn" data-speed="2">x2</button>
+                </div>
+            </div>
+
+            <!-- Sensitivity Section -->
+            <div class="section">
+                <div class="section-title"><i class="fas fa-tachometer-alt"></i> SENSIBILIDAD</div>
+                <div class="range-container">
+                    <input type="range" min="1" max="200" value="100" class="range-input" id="sens-range">
+                    <div class="range-value"><span id="sens-val">100</span>%</div>
+                </div>
+            </div>
+
+            <button id="launch-game" class="launch-btn">
+                <i class="fab fa-free-code-camp"></i> ABRIR FREE FIRE
+            </button>
+        </div>
+    </div>
+
+    <!-- Floating Icon (Hidden by default) -->
+    <div id="floating-icon" class="floating-icon hidden">
+        <i class="fas fa-crosshairs"></i>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
