@@ -26,8 +26,8 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          npm install
-          npm install @capacitor/cli @capacitor/core @capacitor/android
+          npm install --no-audit --no-fund
+          npm install @capacitor/cli @capacitor/core @capacitor/android --no-audit --no-fund
 
       - name: Build Web Content
         run: |
@@ -42,6 +42,13 @@ jobs:
 
       - name: Add Android Platform
         run: npx cap add android
+
+      - name: Inject Android Overlay Permission
+        run: |
+          MANIFEST_PATH="android/app/src/main/AndroidManifest.xml"
+          # Añadir el permiso antes de la etiqueta <application>
+          sed -i '/<application/i \    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />' $MANIFEST_PATH
+          echo "Permiso de superposición inyectado con éxito."
 
       - name: Sync Capacitor
         run: npx cap sync android
